@@ -21,7 +21,27 @@ and even unecessary for certain operations.
 This plugin adds `ic`, `ac`, `iC`, and `aC` as text-objects.  Use them in
 commands like `vic`, `cic`, and `daC`.
 
+These mappings are customizable. To change the default mappings from `c` to `q`
+add to your vimrc (or see `:help textobj-user-reference`):
+```vim
+let g:textobj_wordcolumn_no_default_key_mappings = 1
+
+call textobj#user#map('wordcolumn', {
+            \ 'word' : {
+            \   'select-i' : 'iq',
+            \   'select-a' : 'aq',
+            \   },
+            \ 'WORD' : {
+            \   'select-i' : 'iQ',
+            \   'select-a' : 'aQ',
+            \   },
+            \ })
+```
+
+### Dependencies
+
 This plugin requires the [vim-textobj-user](https://github.com/kana/vim-textobj-user) plugin.
+
 
 ### Learn more in the plugin doc:
 
